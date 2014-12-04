@@ -1,7 +1,9 @@
+
 // Dynamic Button Plugin (cmd j)
 /*
   Original code from https://github.com/ddwht/sketch-dynamic-button
   Fixed for Sketch 3.2 by Bohemian Coding
+  Version 1.2.1
 */
 
 function alert(msg, title) {
@@ -32,7 +34,7 @@ function getButtonDimensionsForLayer(layer){
   var splitLayer = [layer name].split(':');
   var offsetTop,offsetRight,offsetRight,offsetLeft;
   switch(splitLayer.length) {
-    case 1: 
+    case 1:
       layer.name = '0:0:0:0';
       offsetTop = offsetRight = offsetBottom = offsetLeft = 0;
       break;
@@ -51,7 +53,7 @@ function getButtonDimensionsForLayer(layer){
       offsetBottom = parseInt(splitLayer[2]) || 0;
       offsetLeft = parseInt(splitLayer[3]) || 0;
       break;
-    default: 
+    default:
       alert('Wrong format', 'Error');
   }
   return {
@@ -85,7 +87,7 @@ if ([selection count] === 0) {
       [frame  setWidth:buttonDimensions.totalWidth]
       frame.x = 0
       frame.y = 0
-    
+
       currentLayer.frame().x = buttonDimensions.offsetLeft;
       currentLayer.frame().y = buttonDimensions.offsetTop;
     } else {
